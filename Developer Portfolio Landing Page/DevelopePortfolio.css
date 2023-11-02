@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1543269664-7eef42226a21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d29ya2luZyUyMG9uJTIwbGFwdG9wfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60") no-repeat center center;
+    background-size: cover;
+    display: flex;
+
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    left: 10px;
+    color: white;
+    justify-self: center;
+
+}
+
+strong {
+    color: red;
+}
+
+.hero-content h2 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    position: relative;
+
+}
+
+.black-box {
+    top: 0;
+    display: block;
+    background-color: #000;
+}
+
+.box-content {
+    display: block;
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+
+.box-content h3 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.box-content span {
+    font-size: 96px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    margin: 50px auto;
+    gap: 20px;
+}
+
+.card-item {
+    max-width: 340px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttom {
+    display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.contact {
+    background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* .about {
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
+
+    background-color: red;
+    color: white;
+} */
+
+@media (max-width: 786px) {
+    .hero-section {
+        min-height: 50vh;
+    }
+
+    .black-box {
+        font-size: 24px;
+    }
+
+    .buttom {
+        flex-direction: column;
+    }
+}

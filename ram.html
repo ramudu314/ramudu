@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analog Clock</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .clock {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #333;
+      border-radius: 50%;
+      position: relative;
+      background-color: #f0f0f0;
+    }
+
+    .hour-hand, .minute-hand, .second-hand {
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background-color: #333;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+    }
+
+    .hour-hand {
+      height: 5px;
+      z-index: 3;
+    }
+
+    .minute-hand {
+      height: 3px;
+      z-index: 2;
+    }
+
+    .second-hand {
+      height: 1px;
+      background-color: red;
+      z-index: 1;
+    }
+
+    .center-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #333;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="hour-hand" id="hour-hand"></div>
+    <div class="minute-hand" id="minute-hand"></div>
+    <div class="second-hand" id="second-hand"></div>
+    <div class="center-dot"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      const hourHand = document.getElementById('hour-hand');
+      const minuteHand = document.getElementById('minute-hand');
+      const secondHand = document.getElementById('second-hand');
+
+      const hourRotation = (hours % 12) * 30 + minutes * 0.5;
+      const minuteRotation = minutes * 6;
+      const secondRotation = seconds * 6;
+
+      hourHand.style.transform = `rotate(${hourRotation}deg)`;
+      minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
+      secondHand.style.transform = `rotate(${secondRotation}deg)`;
+    }
+
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
